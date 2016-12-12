@@ -1,0 +1,73 @@
+body{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	font-family: 'Lato', sans-serif;
+	font-weight: 100;
+	background: #648880;
+    background: linear-gradient(to right, #f6f1d3, #648880 85%, #293f50);
+}
+html{
+	margin: 0;
+	padding: 0;
+}
+header {
+	padding-top: 30px;
+	height: 50px;
+	color: white;
+}
+header h1{
+	margin: 0;
+	font-weight: 100;
+	font-size: 60px;
+}
+.contact-list{
+	width: 80%;
+	height: 90%;
+	background-color: lightgray;
+	margin: auto;
+}
+.browser{
+	display: flex;
+  	flex-direction: column;
+	width: 80%;
+	height: 65vh;
+	margin: auto;
+	margin-top: 15%;
+	box-shadow: 1px 3px 8px rgba(0, 0, 0, 0.2);
+	background: white;
+	padding: 15px;
+	box-sizing: border-box;
+}
+.browser input{
+	width: 60%;
+	height: 12%;
+	font-family: 'Lato', sans-serif;
+	color: black;
+	font-size: 4vw;
+	text-align: center;
+}
+span#search{
+	position: relative;
+	bottom: 2px;
+}
+span#search i{
+	padding-right: 2%;
+	color: #648880;
+}
+
+
+@media (min-width: 720px) {
+	.browser{
+		margin-top: 5%;
+		width: 65vw;
+	}
+	.contact-list{
+		height: 80%;
+	}
+	.browser input{
+		font-size: 2vw;
+		width: 60%;
+	}
+  
+}
