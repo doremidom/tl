@@ -1,19 +1,47 @@
+<!--add input formatting for phone number and screen size responsive design -->
+
 <!DOCTYPE html>
 <html>
+<html lang="en" ng-app="contactApp">
 <head>
 	<title>Contacts</title>
 	<link href="https://fonts.googleapis.com/css?family=Lato:100,300" rel="stylesheet">
 	<link rel="stylesheet" href="assets/style.css" type="text/css">
 	<script src="https://use.fontawesome.com/0d5a1e1498.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+    <script src="app.module.js"></script>
+    <script src="contact-list/contact-list.module.js"></script>
+    <script src="contact-list/contact-list.component.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js">
+    </script>
+    <script src="assets/jqueryfunctions.js"></script>
 </head>
 <body>
 <header>
 <h1>Contacts</h1>
 </header>
 <div class="browser">
-<div class="contact-list">
+<contact-list></contact-list>
+
+<div id="add-contact">
+<span class="close">X</span>
+
+<h1>Add contact</h1>
+	<form id="contact-form" ng-non-bindable>
+    
+        <p><i class="fa fa-user fa-2x" aria-hidden="true"></i><input id="name" type="text" minlength="2" name="name"  placeholder="name" required></p>
+        <p><i class="fa fa-phone fa-2x" aria-hidden="true"></i><input id= "number" type="tel" pattern="\+\d{11}" title="i.e. +12345678901" name="number" placeholder="i.e. +XXXXXXXXXX" required></p>
+        <p><i class="fa fa-sticky-note fa-2x" aria-hidden="true"></i>
+<input id="context" name="context" placeholder="enter a note (optional)"></p>
+        <button>submit</button>
+    </form>
 </div>
-<span id="search"><i class="fa fa-search fa-3x" aria-hidden="true"></i><input ng-model="$ctrl.query" placeholder="enter a name to search" /></span>
+
+</div>
+
+
+<!--div that lightens all content behind add contact div -->
+<div id="screen">
 </div>
 
 </body>

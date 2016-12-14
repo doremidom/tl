@@ -23,10 +23,30 @@ header h1{
 }
 .contact-list{
 	width: 80%;
-	height: 90%;
-	background-color: lightgray;
+	height: 55vh;
 	margin: auto;
+	overflow: auto;
 }
+
+ul{
+	list-style: none;
+}
+ul span{
+	font-size: 24px;
+	font-style: 300;
+}
+div#add-contact{
+	width: 85%;
+	height: 40%;
+	position: fixed;
+	left: 50%;
+	top: 20%;
+	margin-left: -42.5%;
+	background-color: white;
+	z-index: 2;
+	display: none;
+}
+
 .browser{
 	display: flex;
   	flex-direction: column;
@@ -47,13 +67,63 @@ header h1{
 	font-size: 4vw;
 	text-align: center;
 }
-span#search{
+span.search{
 	position: relative;
 	bottom: 2px;
 }
-span#search i{
+span.search i{
 	padding-right: 2%;
 	color: #648880;
+}
+span.add {
+	float: right;
+	font-size: 44px;
+	margin-top: -5%;
+	font-weight: bold;
+}
+span.add a:hover{
+	color: lightgray;
+}
+
+.close{
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	top: 1%;
+	left: 95%;
+	font-weight: bold;
+	font-size: 25px;
+	z-index: 10;
+}
+button{
+	background-color: #45cae6;
+	border-width: 0px;
+	padding: 6px 10px 6px;
+	border-color: #D3D3D3;
+	border-style: solid;
+	font-family: 'Lato', sans-serif;
+	border-radius: 2px;
+	color: white;
+	width: 92px;
+	height: 34px;
+	font-size: 14px;
+}
+.notes{
+	color: #ccc;
+	font-style: italic;
+}
+
+/*screen that dims on add contact div */
+#screen {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	min-height: 1000px;
+	top: 0;
+	left: 0;
+	z-index: 1;
+	background: rgba(0,0,0,0.50);
+	display: none;
 }
 
 
@@ -63,11 +133,28 @@ span#search i{
 		width: 65vw;
 	}
 	.contact-list{
-		height: 80%;
+		height: 390px;
 	}
 	.browser input{
 		font-size: 2vw;
 		width: 60%;
 	}
-  
+	div#add-contact{
+		width: 40%;
+		margin-left: -20%;
+	} 
 }
+
+@media (min-width: 900px) {
+	.browser{
+		width: 55vw;
+	}
+}
+
+@media (min-width: 1024px) {
+	.browser{
+		width: 35vw;
+	}
+}
+
+

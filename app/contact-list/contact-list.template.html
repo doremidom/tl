@@ -1,0 +1,15 @@
+<span class="add">+</span>
+
+<div class="contact-list">
+	<ul class="contacts">	
+	<h2 ng-model="$ctrl.error">{{$ctrl.error}}</h2><!--error displaying in case api doesn't connect -->
+        <li ng-repeat="contact in $ctrl.contacts | filter:$ctrl.query | orderBy:$ctrl.orderProp">
+          <span>{{contact.name}}</span>
+          <p class="notes">{{contact.context}}</p>
+          <p>{{contact.number|tel}}</p>
+          <hr>
+        </li>
+      </ul>
+</div>
+
+<span class="search"><i class="fa fa-search fa-3x" aria-hidden="true"></i><input ng-model="$ctrl.query" placeholder="enter a name to search" /></span>
